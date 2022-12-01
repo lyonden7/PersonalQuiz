@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		28DCCDB02938C01900E69E92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DCCDAF2938C01900E69E92 /* AppDelegate.swift */; };
 		28DCCDB22938C01900E69E92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DCCDB12938C01900E69E92 /* SceneDelegate.swift */; };
-		28DCCDB42938C01900E69E92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DCCDB32938C01900E69E92 /* ViewController.swift */; };
 		28DCCDB72938C01900E69E92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28DCCDB52938C01900E69E92 /* Main.storyboard */; };
 		28DCCDB92938C01B00E69E92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28DCCDB82938C01B00E69E92 /* Assets.xcassets */; };
 		28DCCDBC2938C01B00E69E92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28DCCDBA2938C01B00E69E92 /* LaunchScreen.storyboard */; };
+		28DCCDC929393E4200E69E92 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DCCDC829393E4200E69E92 /* QuestionViewController.swift */; };
+		28DCCDCB293964F700E69E92 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DCCDCA293964F700E69E92 /* Question.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		28DCCDAC2938C01900E69E92 /* PersonalQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonalQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28DCCDAF2938C01900E69E92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28DCCDB12938C01900E69E92 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		28DCCDB32938C01900E69E92 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		28DCCDB62938C01900E69E92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		28DCCDB82938C01B00E69E92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		28DCCDBB2938C01B00E69E92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28DCCDBD2938C01B00E69E92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28DCCDC829393E4200E69E92 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		28DCCDCA293964F700E69E92 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +70,7 @@
 		28DCCDC32938C19F00E69E92 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				28DCCDB32938C01900E69E92 /* ViewController.swift */,
+				28DCCDC829393E4200E69E92 /* QuestionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -76,6 +78,7 @@
 		28DCCDC42938C1C300E69E92 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				28DCCDCA293964F700E69E92 /* Question.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -178,9 +181,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28DCCDB42938C01900E69E92 /* ViewController.swift in Sources */,
 				28DCCDB02938C01900E69E92 /* AppDelegate.swift in Sources */,
+				28DCCDCB293964F700E69E92 /* Question.swift in Sources */,
 				28DCCDB22938C01900E69E92 /* SceneDelegate.swift in Sources */,
+				28DCCDC929393E4200E69E92 /* QuestionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
