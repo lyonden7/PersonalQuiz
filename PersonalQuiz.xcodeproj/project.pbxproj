@@ -12,8 +12,9 @@
 		28DCCDB72938C01900E69E92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28DCCDB52938C01900E69E92 /* Main.storyboard */; };
 		28DCCDB92938C01B00E69E92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28DCCDB82938C01B00E69E92 /* Assets.xcassets */; };
 		28DCCDBC2938C01B00E69E92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28DCCDBA2938C01B00E69E92 /* LaunchScreen.storyboard */; };
-		28DCCDC929393E4200E69E92 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DCCDC829393E4200E69E92 /* QuestionViewController.swift */; };
 		28DCCDCB293964F700E69E92 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DCCDCA293964F700E69E92 /* Question.swift */; };
+		28DCCDCD293A06EB00E69E92 /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DCCDCC293A06EB00E69E92 /* QuestionsViewController.swift */; };
+		28DCCDCF293A071A00E69E92 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DCCDCE293A071A00E69E92 /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +25,9 @@
 		28DCCDB82938C01B00E69E92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		28DCCDBB2938C01B00E69E92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28DCCDBD2938C01B00E69E92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		28DCCDC829393E4200E69E92 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		28DCCDCA293964F700E69E92 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		28DCCDCC293A06EB00E69E92 /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
+		28DCCDCE293A071A00E69E92 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +72,8 @@
 		28DCCDC32938C19F00E69E92 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				28DCCDC829393E4200E69E92 /* QuestionViewController.swift */,
+				28DCCDCC293A06EB00E69E92 /* QuestionsViewController.swift */,
+				28DCCDCE293A071A00E69E92 /* ResultViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -181,10 +184,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28DCCDCF293A071A00E69E92 /* ResultViewController.swift in Sources */,
 				28DCCDB02938C01900E69E92 /* AppDelegate.swift in Sources */,
 				28DCCDCB293964F700E69E92 /* Question.swift in Sources */,
+				28DCCDCD293A06EB00E69E92 /* QuestionsViewController.swift in Sources */,
 				28DCCDB22938C01900E69E92 /* SceneDelegate.swift in Sources */,
-				28DCCDC929393E4200E69E92 /* QuestionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
