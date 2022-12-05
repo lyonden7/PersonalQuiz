@@ -37,16 +37,19 @@ class QuestionsViewController: UIViewController {
     private var currentAnswers: [Answer] {
         questions[questionIndex].answers
     }
+    private var currentQuestion: Question {
+        questions[questionIndex]
+    }
 
     // MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-
         updateUI()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        <#code#>
+        guard let resultVC = segue.destination as? ResultViewController else { return }
+        resultVC.answersChosen = answersChosen
     }
     
     // MARK: - IB Actions
@@ -77,19 +80,30 @@ class QuestionsViewController: UIViewController {
 // MARK: - Private Methods
 extension QuestionsViewController {
     private func updateUI() {
+        hideStack()
+        setQuestionForLabel()
+        setProgressForProgressView()
+        setNavigationTitle()
+        showCurrentAnswer(for: currentQuestion.responseType)
+    }
+    
+    private func hideStack() {
         for stackView in [singleStackView, multipleStackView, rangedStackView] {
             stackView?.isHidden = true
         }
-        
-        let currentQuestion = questions[questionIndex]
+    }
+    
+    private func setQuestionForLabel() {
         questionLabel.text = currentQuestion.title
-        
+    }
+    
+    private func setProgressForProgressView() {
         let totalProgress = Float(questionIndex) / Float(questions.count)
         questionProgressView.setProgress(totalProgress, animated: true)
-        
+    }
+    
+    private func setNavigationTitle() {
         title = "Вопрос № \(questionIndex + 1) из \(questions.count)"
-        
-        showCurrentAnswer(for: currentQuestion.responseType)
     }
     
     private func showCurrentAnswer(for type: ResponseType) {

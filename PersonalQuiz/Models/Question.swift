@@ -33,7 +33,7 @@ struct Question {
                 ]
             ),
             Question(
-                title: "Любите ли вы поездки на машине",
+                title: "Любите ли вы поездки на машине?",
                 responseType: .ranged,
                 answers: [
                     Answer(title: "Ненавижу", animal: .cat),
