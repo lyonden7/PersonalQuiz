@@ -68,6 +68,7 @@ class QuestionsViewController: UIViewController {
             }
         }
         nextQuestion()
+        #error("Дописать логику - если не выбрано ни одного ответа - то подкинуть showAlert с просьбой поудмать еще")
     }
     
     @IBAction func rangedAnswerButtonPressed(_ sender: UIButton) {
