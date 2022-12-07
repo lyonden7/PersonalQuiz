@@ -16,54 +16,39 @@ class ResultViewController: UIViewController {
     
     // MARK: - Public Properties
     var answersChosen: [Answer] = []
-
+    
+    // MARK: - Private Properties
+    private var chosenAnimals: [Animal] = []
+    private var animalsCount: [Animal: Int] = [:]
+    
     // MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
-        
-        test()
+        setResult()
     }
-
+    
     // MARK: - IB Actions
     @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
         navigationController?.dismiss(animated: true)
     }
+}
     
-    // MARK: - Private Methods
-    private func test() {
-        var chosenAnimal: [Animal] = []
+// MARK: - Private Methods
+extension ResultViewController {
+    private func setResult() {
         for chosen in answersChosen {
-            print(chosen.animal)
-            chosenAnimal.append(chosen.animal)
+            chosenAnimals.append(chosen.animal)
         }
         
-        var counts: [Animal: Int] = [:]
-        
-        for animal in chosenAnimal {
-            counts[animal] = (counts[animal] ?? 0) + 1
+        for animal in chosenAnimals {
+            animalsCount[animal] = (animalsCount[animal] ?? 0) + 1
         }
         
-//        print(counts)
+        let sortedAnimalsByCount = animalsCount.sorted { $0.value > $1.value }
         
-        let sortedCounts = counts.sorted { $0.value > $1.value }
-        print(sortedCounts)
-        guard let resultAnimal = sortedCounts.first?.key else { return }
-        print(resultAnimal.rawValue)
-        print(resultAnimal.definition)
-        
+        guard let resultAnimal = sortedAnimalsByCount.first?.key else { return }
         resultAnimalLabel.text = "Вы - \(resultAnimal.rawValue)!"
         resultDefinitionLabel.text = resultAnimal.definition
     }
 }
-
-
-
-//[PersonalQuiz.Answer(title: "Стейк", animal: PersonalQuiz.Animal.dog),
-// PersonalQuiz.Answer(title: "Плавать", animal: PersonalQuiz.Animal.dog),
-// PersonalQuiz.Answer(title: "Не замечаю", animal: PersonalQuiz.Animal.turtle)]
-
-
-//[PersonalQuiz.Animal.turtle: 1, PersonalQuiz.Animal.dog: 2]
-//[(key: PersonalQuiz.Animal.dog, value: 2), (key: PersonalQuiz.Animal.turtle, value: 1)]
-

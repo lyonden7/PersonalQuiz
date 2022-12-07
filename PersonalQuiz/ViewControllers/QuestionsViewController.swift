@@ -47,6 +47,7 @@ class QuestionsViewController: UIViewController {
         updateUI()
     }
     
+    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let resultVC = segue.destination as? ResultViewController else { return }
         resultVC.answersChosen = answersChosen
@@ -62,13 +63,16 @@ class QuestionsViewController: UIViewController {
     }
     
     @IBAction func multipleAnswerButtonPressed(_ sender: UIButton) {
+        var answerCount = 0
+        
         for (multipleSwitch, answer) in zip(multipleSwitches, currentAnswers) {
             if multipleSwitch.isOn {
                 answersChosen.append(answer)
+                answerCount += 1
             }
         }
-        nextQuestion()
-        #error("Дописать логику - если не выбрано ни одного ответа - то подкинуть showAlert с просьбой поудмать еще")
+        
+        answerCount > 0 ? nextQuestion() : showAlert(with: "Упс!", and: "Не выбран ответ. Попробуйте еще раз!")
     }
     
     @IBAction func rangedAnswerButtonPressed(_ sender: UIButton) {
@@ -150,6 +154,15 @@ extension QuestionsViewController {
     }
 }
 
+// MARK: - UIAlertController
+extension QuestionsViewController {
+    private func showAlert(with title: String, and message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        alertController.addAction(okAction)
+        present(alertController, animated: true)
+    }
+}
 
 
 
